@@ -1,3 +1,3 @@
 # clothing-web-frontend
 
-A multi-vendor clothing marketplace frontend built with React.
+Frontend for a multi-vendor clothing marketplace built with React + Vite.
