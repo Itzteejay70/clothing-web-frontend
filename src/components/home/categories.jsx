@@ -13,10 +13,10 @@ export default function Categories() {
   return (
     <section className="categoriesSection">
       <div className="container">
-        <div className="sectionHeaderRow">
+        <div className="sectionHeader">
           <h2>Shop by Category</h2>
+        <div className="sectionDivider"></div>
         </div>
-
         <div className="categoryTiles">
           {categories.map((c) => (
             <Link

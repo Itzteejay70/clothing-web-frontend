@@ -14,10 +14,10 @@ export default function NewArrivals() {
   return (
     <section className="newArrivals">
       <div className="container">
-        <div className="sectionHeaderRow">
-          <h2>New Arrivals</h2>
+        <div className="sectionHeader">
+            <h2>New Arrivals</h2>
+        <div className="sectionDivider"></div>
         </div>
-
         <div className="productGrid">
           {products.map((p) => (
             <ProductCard key={p.id} product={p} />

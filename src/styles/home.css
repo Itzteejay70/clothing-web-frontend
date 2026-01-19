@@ -3,12 +3,18 @@
   padding: 40px 0;
   background: #fff;
 }
-
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
 .sectionHeader h2 {
-  margin: 0 0 18px;
+  margin: 0;
   font-size: 22px;
   font-weight: 800;
   color: #111;
+  white-space: nowrap;
 }
 .tBtn {
   text-decoration: none;
@@ -171,12 +177,12 @@
   border-radius: 6px;
   overflow: hidden;
   background: #f3f3f3;
-  height: 120px;
+   aspect-ratio: 16 / 9;
 }
 
 .categoryImgWrap img {
   width: 100%;
-  aspect-ratio: 4 / 5; 
+  height: "100%";
   object-fit: cover;
   display: block;
 }

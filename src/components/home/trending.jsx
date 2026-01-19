@@ -14,9 +14,10 @@ export default function Trending() {
   return (
     <section className="trending">
       <div className="container">
-        <div className="sectionHeader">
-          <h2>Trending Now</h2>
-        </div>
+           <div className="sectionHeader">
+             <h2>Trending Now</h2>
+          <div className="sectionDivider"></div>
+          </div>
 
         <div className="productGrid">
           {products.map((product) => (
