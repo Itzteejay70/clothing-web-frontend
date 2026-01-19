@@ -37,6 +37,7 @@ export default function Categories() {
                 />
               </div>
               <div className="categoryLabelRow">
+                <span className="categoryIcon" aria-hidden="true">{c.icon}</span>
                 <span className="categoryName">{c.name}</span>
               </div>
             </Link>

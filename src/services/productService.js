@@ -72,24 +72,28 @@ export async function getCategories() {
     {
       id: "tshirts",
       name: "T-Shirts",
+      icon: "👕",
       image:
         "/assets/categories/plainTee.jpg",
     },
     {
       id: "hoodies",
       name: "Hoodies",
+      icon: "🧥",
       image:
        "/assets/categories/hoodies.jpeg",
     },
     {
       id: "jackets",
       name: "Jackets",
+      icon: "🥼",
       image:
         "/assets/categories/jackets.jpeg",
     },
     {
       id: "sneakers",
       name: "Sneakers",
+      icon: "👟",
       image:
         "/assets/categories/sneakers.jpeg",
     },
