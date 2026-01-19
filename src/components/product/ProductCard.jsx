@@ -18,7 +18,6 @@ export default function ProductCard({ product }) {
       <div className="productInfo">
         <h4>{product.name}</h4>
         <p className="price">₦{product.price.toLocaleString()}</p>
-        <button className="shopBtn">Shop Now</button>
       </div>
     </div>
   );

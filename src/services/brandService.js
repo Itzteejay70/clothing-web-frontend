@@ -13,7 +13,7 @@ export async function getAllBrands() {
 
 export async function getFeaturedBrands() {
   // For now: first 3, or any selection you want
-  return brands.slice(0, 3);
+  return brands.slice(0, 4);
 }
 
 export async function getBrandById(id) {

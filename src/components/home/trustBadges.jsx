@@ -1,8 +1,8 @@
 export default function TrustBadges() {
   const items = [
-    { title: "Verified Brands", desc: "Only trusted Nigerian streetwear brands." },
-    { title: "Secure Payments", desc: "Protected checkout and payment flow." },
-    { title: "Fast Delivery", desc: "Quick dispatch and delivery updates." },
+    { title: "Verified Brands." },
+    { title: "Secure Payments." },
+    { title: "Fast Delivery." },
   ];
 
   return (

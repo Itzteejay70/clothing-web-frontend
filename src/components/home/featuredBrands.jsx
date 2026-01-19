@@ -14,11 +14,15 @@ export default function FeaturedBrands() {
     <section className="featuredBrands">
       <div className="container">
         <div className="sectionHeaderRow">
-          <h2>Featured Brands</h2>
-          <Link className="viewAllBtn" to="/brands">
-            View All
-          </Link>
-        </div>
+  <h2 className="sectionTitle">Featured Brands</h2>
+
+  <div className="sectionDivider" />
+  
+  <Link className="viewAllBtn" to="/brands">
+    View All <span style={{ marginLeft: 8 }}>›</span>
+  </Link>
+</div>
+
 
         <div className="brandLogoRow">
           {brands.map((b) => (
