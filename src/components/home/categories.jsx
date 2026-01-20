@@ -21,7 +21,8 @@ export default function Categories() {
           {categories.map((c) => (
             <Link
               key={c.id}
-              to={`/shop?category=${c.id}`}
+              to={`/shop?category=${c.category}`}
+
               className="categoryTile"
               title={c.name}
             >

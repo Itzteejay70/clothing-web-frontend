@@ -5,6 +5,7 @@ import Shop from "../pages/public/Shop";
 import NewArrivals from "../pages/public/NewArrivals";
 import Trending from "../pages/public/Trending";
 
+
 export default function AppRoutes() {
   return (
     <Routes>

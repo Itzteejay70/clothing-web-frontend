@@ -70,28 +70,28 @@ export async function getNewArrivals() {
 export async function getCategories() {
   return [
     {
-      id: "tshirts",
+      category: "tshirts",
       name: "T-Shirts",
       icon: "👕",
       image:
         "/assets/categories/plainTee.jpg",
     },
     {
-      id: "hoodies",
+      category: "hoodies",
       name: "Hoodies",
       icon: "🧥",
       image:
        "/assets/categories/hoodies.jpeg",
     },
     {
-      id: "jackets",
+      category: "jackets",
       name: "Jackets",
       icon: "🥼",
       image:
         "/assets/categories/jackets.jpeg",
     },
     {
-      id: "sneakers",
+      category: "sneakers",
       name: "Sneakers",
       icon: "👟",
       image:
@@ -100,5 +100,28 @@ export async function getCategories() {
     
   ];
 }
+
+export async function getAllProducts() {
+  return allProducts; // your full array
+}
+
+export async function getProductsByCategory(category) {
+  if (!category) return allProducts;
+  return allProducts.filter((p) => p.category === category);
+}
+
+const allProducts = [
+  { id: 1, name: "Varsity Jacket", price: 28000, image: "/assets/products/varsityjacket.jpeg", category: "jackets" },
+  { id: 2, name: "Cargo Pants", price: 15000, image: "/assets/products/cargopants.jpeg", category: "pants" },
+  { id: 3, name: "Hoodie Drop", price: 12000, image: "/assets/products/hoodHoodie.jpeg", category: "hoodies" },
+  { id: 4, name: "Drip Tee", price: 8500, image: "/assets/products/driptee.jpeg", category: "tshirts" },
+
+  { id: 101, name: "Graphic Snapback", price: 8500, image: "/assets/products/snapback.jpeg", category: "caps" },
+  { id: 102, name: "Flame Print Shirt", price: 12000, image: "/assets/products/printshirt.jpeg", category: "tshirts" },
+  { id: 103, name: "Abstract Sweatshirt", price: 15000, image: "/assets/products/sweatshirt.jpeg", category: "hoodies" },
+  { id: 104, name: "Camo Shorts", price: 10000, image: "/assets/products/camoshorts.jpeg", category: "pants" },
+
+];
+
 
 
