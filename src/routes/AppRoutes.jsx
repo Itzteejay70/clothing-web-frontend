@@ -5,6 +5,7 @@ import Shop from "../pages/public/Shop";
 import NewArrivals from "../pages/public/NewArrivals";
 import Trending from "../pages/public/Trending";
 import ProductDetails from "../pages/public/ProductDetails";
+import Cart from "../pages/public/Cart";
 
 
 export default function AppRoutes() {
@@ -16,6 +17,12 @@ export default function AppRoutes() {
       <Route path="/trending" element={<Trending />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/product/:id" element={<ProductDetails />} />
+      <Route path="/cart" element={<Cart />} />
+      {/* next page */}
+      <Route path="/checkout" element={<Checkout />} />
+
+      
+
 
     </Routes>
   );

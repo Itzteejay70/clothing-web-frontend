@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProductById } from "../../services/productService.js";
+import { useCart } from "../../context/CartContext";
+
 import "../../styles/home.css";
 
 export default function ProductDetails() {
   const { id } = useParams();
+  const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -52,9 +55,10 @@ export default function ProductDetails() {
               {product.description || "Product description will appear here."}
             </p>
 
-            <button className="shopBtn" style={{ maxWidth: 260 }}>
+            <button className="shopBtn" onClick={() => addToCart(product)}>
               Add to Cart
             </button>
+
           </div>
         </div>
       )}
