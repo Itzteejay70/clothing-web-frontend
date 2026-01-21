@@ -36,8 +36,8 @@ export default function Hero() {
 
 const styles = {
   wrapper: {
-    background: "#0b0b0b",
-    color: "#c64141ff",
+    background: "#fff",
+    color: "#0b0b0b",
     padding: "36px 0",
   },
   container: {
