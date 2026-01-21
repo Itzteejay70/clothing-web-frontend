@@ -3,7 +3,7 @@ import Home from "../pages/public/Home";
 import Brands from "../pages/public/Brands";
 import Shop from "../pages/public/Shop";
 import NewArrivals from "../pages/public/NewArrivals";
-import Trending from "../pages/public/Trending";
+
 
 
 export default function AppRoutes() {
