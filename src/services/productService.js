@@ -123,5 +123,7 @@ const allProducts = [
 
 ];
 
-
+export async function getProductById(id) {
+  return allProducts.find((p) => String(p.id) === String(id)) || null;
+}
 
