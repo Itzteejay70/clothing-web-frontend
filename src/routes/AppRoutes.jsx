@@ -6,6 +6,8 @@ import NewArrivals from "../pages/public/NewArrivals";
 import Trending from "../pages/public/Trending";
 import ProductDetails from "../pages/public/ProductDetails";
 import Cart from "../pages/public/Cart";
+import Checkout from "../pages/public/Checkout";
+
 
 
 export default function AppRoutes() {
