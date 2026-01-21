@@ -59,7 +59,6 @@ export default function Navbar() {
         {/* Right icons (simple placeholders for now) */}
         <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
           <button style={iconBtn}>🔍</button>
-          <button style={iconBtn}>♡</button>
           <button style={iconBtn}>👤</button>
           <button style={iconBtn}>🛒</button>
         </div>
