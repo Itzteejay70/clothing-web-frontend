@@ -8,16 +8,24 @@ export default function Brands() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
+
     getAllBrands()
-      .then(setBrands)
-      .then((res) => setBrands(res.data || res))
+      .then((res) => setBrands(res?.data || res))
       .finally(() => setLoading(false));
   }, []);
 
   return (
     <div className="container" style={{ padding: "28px 0" }}>
-      <div className="sectionHeaderRow" style={{ marginBottom: 16 }}>
-        <h2 style={{ margin: 0 }}>Brands</h2>
+      {/* Header with back arrow */}
+      <div className="shopHeaderRow">
+        <Link to="/" className="backLink" aria-label="Back to Home">
+          ‹
+        </Link>
+
+        <h2 className="shopTitle">Brands</h2>
+
+        <div className="shopHeaderDivider" />
       </div>
 
       {loading ? (
@@ -28,6 +36,7 @@ export default function Brands() {
             <Link key={b.id} to={`/brands/${b.id}`} className="brandCardPage">
               <img
                 src={b.logo}
+                alt={b.name || b.id}
                 onError={(e) => (e.currentTarget.src = "/images/fallback.png")}
               />
             </Link>
@@ -37,4 +46,3 @@ export default function Brands() {
     </div>
   );
 }
-
