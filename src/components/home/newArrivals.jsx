@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ProductCard from "../product/productCard.jsx";
+import ProductCard from "../product/ProductCard.jsx";
 import { getNewArrivals } from "../../services/productService.js";
 import "../../styles/home.css";
 
