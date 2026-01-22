@@ -8,6 +8,11 @@ import ProductDetails from "../pages/public/ProductDetails";
 import Cart from "../pages/public/Cart";
 import Checkout from "../pages/public/Checkout";
 import OrderSuccess from "../pages/public/OrderSuccess";
+import Profile from "../pages/public/Profile";
+import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
+import ProtectedRoute from "../components/common/ProtectedRoute";
+
 
 
 
@@ -24,7 +29,11 @@ export default function AppRoutes() {
       {/* next page */}
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/order-success" element={<OrderSuccess />} />
-
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
+      <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>}/>
     </Routes>
   );
 }

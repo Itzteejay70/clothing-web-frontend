@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/AuthContext";
 import "../../styles/home.css";
 
 export default function Navbar() {
@@ -8,6 +9,9 @@ export default function Navbar() {
   const location = useLocation();
 
   const { items } = useCart();
+
+  const { user } = useAuth();
+
 
   // total quantity (not just number of unique products)
   const cartCount = useMemo(
@@ -41,12 +45,13 @@ export default function Navbar() {
           <NavLink to="/shop" className="navLink">Shop</NavLink>
           <NavLink to="/new-arrivals" className="navLink">New Arrivals</NavLink>
           <NavLink to="/trending" className="navLink">Trending</NavLink>
+          
         </nav>
 
         {/* Right actions */}
         <div className="navActions">
-          <Link to="/profile" className="navIconBtn" aria-label="Profile">
-           👤
+          <Link to={user ? "/profile" : "/login"} className="navIconBtn" aria-label={user ? "Profile" : "Login"}>
+            👤
           </Link>
           <Link to="/cart" className="navIconBtn" aria-label="Cart">
             🛒
@@ -85,6 +90,8 @@ export default function Navbar() {
           <NavLink to="/shop" className="navDrawerLink">Shop</NavLink>
           <NavLink to="/new-arrivals" className="navDrawerLink">New Arrivals</NavLink>
           <NavLink to="/trending" className="navDrawerLink">Trending</NavLink>
+          <NavLink to="/login" className="navDrawerLink">  Login</NavLink>
+
           
 
         </nav>
