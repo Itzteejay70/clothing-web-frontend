@@ -1,18 +1,19 @@
 import "../../styles/home.css";
 
 export default function TrustBadges({ variant = "default" }) {
-  const items = [
-    { title: "Verified Brands." },
-    { title: "Secure Payments." },
-    { title: "Fast Delivery." },
-  ];
+   const items = [
+  { title: "Verified Brands.", icon: "✓" },
+  { title: "Secure Payments.", icon: "🔒" },
+  { title: "Fast Delivery.", icon: "🚚" },
+];
+
 
   return (
     <section className={`trustBadgesWrap ${variant === "hero" ? "trustBadgesHero" : ""}`}>
       <div className="container trustBadgesGrid">
         {items.map((item) => (
           <div key={item.title} className="trustBadgeCard">
-            <div className="trustBadgeIcon">✓</div>
+            <div className="trustBadgeIcon">{item.icon}</div>
 
             <div>
               <h3 className="trustBadgeTitle">{item.title}</h3>

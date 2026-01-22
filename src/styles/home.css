@@ -113,10 +113,9 @@
   border: 1px solid #ddd;
   display: grid;
   place-items: center;
-  font-weight: 900;
-  color: #111;
-  background: #fff;
   flex: 0 0 auto;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .trustBadgeTitle {
