@@ -1,3 +1,179 @@
+/* HERO */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 0;
+  color: #fff;
+
+  /* Background image (put file in: public/assets/hero/hero-bg.jpg) */
+  background-image: url("/assets/hero/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* adjust: 0.4 lighter, 0.65 darker */
+  z-index: 0;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+
+  /* single column now */
+  display: block;
+
+  /* keeps the content neat on wide screens */
+  max-width: 720px;
+
+  /* optional spacing inside the hero */
+  padding: 34px 0;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 52px;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.heroSubtitle {
+  margin: 0;
+  opacity: 0.9;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+}
+
+.heroActions {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.heroBtn {
+  display: inline-block;
+  background: #42aa6a;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .heroInner {
+    max-width: 100%;
+    padding: 26px 0;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+  }
+}
+/* TRUST BADGES (default) */
+.trustBadgesWrap {
+  background: #fff;
+  padding: 22px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.trustBadgesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.trustBadgeCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  background: #fafafa;
+}
+
+.trustBadgeIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: #111;
+  background: #fff;
+  flex: 0 0 auto;
+}
+
+.trustBadgeTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 900;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .trustBadgesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .trustBadgeCard {
+    padding: 10px 10px;
+    border-radius: 12px;
+    gap: 8px;
+  }
+
+  .trustBadgeTitle {
+    font-size: 12px;
+  }
+
+  .trustBadgeIcon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}
+
+/* TRUST BADGES inside HERO (glass look) */
+.trustBadgesHero {
+  background: transparent;
+  border-bottom: none;
+  padding: 0;
+  margin-top: 18px;
+}
+
+.trustBadgesHero .trustBadgeCard {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+}
+
+.trustBadgesHero .trustBadgeIcon {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.trustBadgesHero .trustBadgeTitle {
+  color: #fff;
+}
+
+
 /* TRENDING */
 .trending {
   padding: 40px 0;
