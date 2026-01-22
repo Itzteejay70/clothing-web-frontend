@@ -7,6 +7,10 @@ import "../../styles/home.css";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const hideCartOn = ["/", "/login", "/register", "/profile"];
+const showCart = !hideCartOn.includes(location.pathname);
+
+
 
   const { items } = useCart();
 
@@ -52,10 +56,14 @@ export default function Navbar() {
           <Link to={user ? "/profile" : "/login"} className="navIconBtn" aria-label={user ? "Profile" : "Login"}>
             👤
           </Link>
-          <Link to="/cart" className="navIconBtn" aria-label="Cart">
-            🛒
-            {cartCount > 0 && <span className="cartBadge">{cartCount}</span>}
-          </Link>
+        {showCart && (
+        <Link to="/cart" className="navIconBtn" aria-label="Cart">
+        🛒
+        {cartCount > 0 && <span className="cartBadge">{cartCount}</span>}
+        </Link>   
+        )}
+
+
 
           {/* Hamburger (mobile) */}
           <button
