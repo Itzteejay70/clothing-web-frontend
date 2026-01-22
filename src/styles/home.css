@@ -2,7 +2,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 36px 0;
+  padding: 36px 20px;
   color: #fff;
 
   /* Background image (put file in: public/assets/hero/hero-bg.jpg) */

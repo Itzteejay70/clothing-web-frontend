@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="container heroInner">
         <div className="heroLeft">
           <h1 className="heroTitle">
-            Where Naija <br /> Streetwear Lives.
+            WHERE NAIJA <br /> STREETWEAR LIVES.
           </h1>
 
           <p className="heroSubtitle">SHOP THE LATEST</p>
