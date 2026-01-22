@@ -82,9 +82,7 @@ export default function Navbar() {
           <NavLink to="/shop" className="navDrawerLink">Shop</NavLink>
           <NavLink to="/new-arrivals" className="navDrawerLink">New Arrivals</NavLink>
           <NavLink to="/trending" className="navDrawerLink">Trending</NavLink>
-          <NavLink to="/cart" className="navDrawerLink">
-            Cart {cartCount > 0 ? `(${cartCount})` : ""}
-          </NavLink>
+          
         </nav>
       </aside>
     </header>
