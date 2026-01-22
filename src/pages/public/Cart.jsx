@@ -3,7 +3,7 @@ import { useCart } from "../../context/CartContext";
 import "../../styles/home.css";
 
 export default function Cart() {
-  const { items, subtotal, increment, decrement, removeFromCart } = useCart();
+  const { items, subtotal, increment, decrement, removeFromCart, clearCart } = useCart();
 
   return (
     <div className="container" style={{ padding: "28px 0" }}>
@@ -49,10 +49,14 @@ export default function Cart() {
               <span>Subtotal</span>
               <strong>₦{subtotal.toLocaleString()}</strong>
             </div>
-
+    <div className="cartActions">
+    <button className="clearBtn" onClick={clearCart}>
+      Clear Cart
+    </button>
             <Link to="/checkout" className="ctaBtn">
               Proceed to Checkout ›
             </Link>
+          </div>
           </div>
         </>
       )}

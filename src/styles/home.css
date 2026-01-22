@@ -350,7 +350,7 @@
   margin: 12px 0 18px;
 }
 
-/*Cart Button*/
+/*Cart */
 .cartList {
   display: flex;
   flex-direction: column;
@@ -422,4 +422,23 @@
     height: 100px;
   }
 }
+.cartActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.clearBtn {
+  padding: 10px 12px;
+  border: 1px solid #eee;
+  color: #fff;
+  background: black;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
 

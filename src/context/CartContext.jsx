@@ -1,10 +1,28 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const CartContext = createContext();
 
+const STORAGE_KEY = "cart_items_v1";
+
 export function CartProvider({ children }) {
-  const [items, setItems] = useState([]); 
-  // items: [{ product, qty }]
+  // Load initial cart from localStorage (runs once)
+  const [items, setItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  // Persist cart to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch {
+      // ignore storage errors
+    }
+  }, [items]);
 
   function addToCart(product) {
     setItems((prev) => {
@@ -40,13 +58,25 @@ export function CartProvider({ children }) {
     );
   }
 
+  function clearCart() {
+    setItems([]);
+  }
+
   const subtotal = useMemo(() => {
     return items.reduce((sum, x) => sum + x.product.price * x.qty, 0);
   }, [items]);
 
   return (
     <CartContext.Provider
-      value={{ items, addToCart, removeFromCart, increment, decrement, subtotal }}
+      value={{
+        items,
+        addToCart,
+        removeFromCart,
+        increment,
+        decrement,
+        subtotal,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>
