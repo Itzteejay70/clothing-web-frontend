@@ -768,3 +768,73 @@
     border-radius: 9px;
   }
 }
+
+/* AUTH PAGES */
+.authContainer {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.authCard {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fff;
+  padding: 16px;
+  margin-top: 14px;
+}
+
+.authError {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(176, 0, 32, 0.2);
+  background: rgba(176, 0, 32, 0.06);
+  color: #b00020;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.authLinksRow {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.authLink {
+  color: #6b7f3b;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.authLink:hover {
+  text-decoration: underline;
+}
+
+/* Inputs (works for Login/Register/Checkout too) */
+.field label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #111;
+}
+
+.field input,
+.field textarea {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 11px 12px;
+  outline: none;
+  background: #fff;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(107, 127, 59, 0.5);
+  box-shadow: 0 0 0 3px rgba(107, 127, 59, 0.12);
+}
+
+@media (max-width: 420px) {
+  .authCard {
+    padding: 14px;
+  }
+}

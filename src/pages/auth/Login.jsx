@@ -28,7 +28,7 @@ export default function Login() {
   }
 
   return (
-    <div className="container" style={{ padding: "28px 0", maxWidth: 520 }}>
+    <div className="container authContainer" style={{ padding: "28px 0" }}>
       <div className="shopHeaderRow">
         <Link to="/" className="backLink" aria-label="Back">
           ‹
@@ -37,9 +37,9 @@ export default function Login() {
         <div className="shopHeaderDivider" />
       </div>
 
-      {error ? <p style={{ color: "#b00020", fontWeight: 800 }}>{error}</p> : null}
+      {error ? <div className="authError">{error}</div> : null}
 
-      <form onSubmit={onSubmit} className="checkoutForm" style={{ marginTop: 12 }}>
+      <form onSubmit={onSubmit} className="authCard">
         <div className="field">
           <label>Email</label>
           <input name="email" value={form.email} onChange={onChange} />
@@ -47,16 +47,25 @@ export default function Login() {
 
         <div className="field">
           <label>Password</label>
-          <input name="password" type="password" value={form.password} onChange={onChange} />
+          <input
+            name="password"
+            type="password"
+            value={form.password}
+            onChange={onChange}
+          />
         </div>
 
         <button className="shopBtn" type="submit">
           Sign In
         </button>
 
-        <div style={{ marginTop: 12, display: "flex", justifyContent: "space-between" }}>
-          <Link to="/register" className="linkBtn">Create account</Link>
-          <Link to="/forgot-password" className="linkBtn">Forgot password?</Link>
+        <div className="authLinksRow">
+          <Link to="/register" className="authLink">
+            Create account
+          </Link>
+          <Link to="/forgot-password" className="authLink">
+            Forgot password?
+          </Link>
         </div>
       </form>
     </div>

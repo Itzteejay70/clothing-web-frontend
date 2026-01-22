@@ -25,7 +25,7 @@ export default function Register() {
   }
 
   return (
-    <div className="container" style={{ padding: "28px 0", maxWidth: 520 }}>
+    <div className="container authContainer" style={{ padding: "28px 0" }}>
       <div className="shopHeaderRow">
         <Link to="/login" className="backLink" aria-label="Back">
           ‹
@@ -34,9 +34,9 @@ export default function Register() {
         <div className="shopHeaderDivider" />
       </div>
 
-      {error ? <p style={{ color: "#b00020", fontWeight: 800 }}>{error}</p> : null}
+      {error ? <div className="authError">{error}</div> : null}
 
-      <form onSubmit={onSubmit} className="checkoutForm" style={{ marginTop: 12 }}>
+      <form onSubmit={onSubmit} className="authCard">
         <div className="field">
           <label>Full Name</label>
           <input name="fullName" value={form.fullName} onChange={onChange} />
@@ -49,16 +49,26 @@ export default function Register() {
 
         <div className="field">
           <label>Password</label>
-          <input name="password" type="password" value={form.password} onChange={onChange} />
+          <input
+            name="password"
+            type="password"
+            value={form.password}
+            onChange={onChange}
+          />
         </div>
 
         <button className="shopBtn" type="submit">
           Create Account
         </button>
 
-        <p style={{ marginTop: 12 }}>
-          Already have an account? <Link to="/login" className="linkBtn">Login</Link>
-        </p>
+        <div className="authLinksRow" style={{ justifyContent: "flex-start" }}>
+          <span style={{ fontWeight: 700, color: "#444" }}>
+            Already have an account?
+          </span>
+          <Link to="/login" className="authLink">
+            Login
+          </Link>
+        </div>
       </form>
     </div>
   );
