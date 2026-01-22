@@ -7,6 +7,7 @@ import Trending from "../pages/public/Trending";
 import ProductDetails from "../pages/public/ProductDetails";
 import Cart from "../pages/public/Cart";
 import Checkout from "../pages/public/Checkout";
+import OrderSuccess from "../pages/public/OrderSuccess";
 
 
 
@@ -22,9 +23,7 @@ export default function AppRoutes() {
       <Route path="/cart" element={<Cart />} />
       {/* next page */}
       <Route path="/checkout" element={<Checkout />} />
-
-      
-
+      <Route path="/order-success" element={<OrderSuccess />} />
 
     </Routes>
   );
