@@ -85,7 +85,10 @@ export default function Navbar() {
           <NavLink to="/shop" className="navDrawerLink">Shop</NavLink>
           <NavLink to="/new-arrivals" className="navDrawerLink">New Arrivals</NavLink>
           <NavLink to="/trending" className="navDrawerLink">Trending</NavLink>
-          
+          <Link to="/profile" className="navIconBtn" aria-label="Profile">
+           👤
+          </Link>
+
         </nav>
       </aside>
     </header>
