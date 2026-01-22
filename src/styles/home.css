@@ -543,3 +543,113 @@
   }
 }
 
+/* Navbar */
+/* NAVBAR */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.navLogo {
+  text-decoration: none;
+  color: #111;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.navLogo span {
+  font-weight: 900;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.navLink.active {
+  color: #6b7f3b;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navIconBtn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: #111;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.navMenuBtn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  display: none; /* hidden on desktop */
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* MOBILE MENU PANEL */
+.navMobile {
+  display: none;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.navMobile.open {
+  display: block;
+}
+
+.navMobileLink {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 800;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.navMobileLink.active {
+  color: #6b7f3b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* hide links on mobile */
+  }
+  .navMenuBtn {
+    display: grid; /* show hamburger */
+    place-items: center;
+  }
+}

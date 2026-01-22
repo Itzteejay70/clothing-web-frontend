@@ -1,76 +1,57 @@
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
-const navLinkStyle = ({ isActive }) => ({
-  textDecoration: "none",
-  color: "#111",
-  fontWeight: isActive ? "600" : "400",
-  borderBottom: isActive ? "2px solid #111" : "none",
-  paddingBottom: "4px",
-});
+import "../../styles/home.css";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  function closeMenu() {
+    setOpen(false);
+  }
+
   return (
-    <header
-      style={{
-        background: "#fff",
-        borderBottom: "1px solid #eee",
-        position: "sticky",
-        top: 0,
-        zIndex: 50,
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          padding: "14px 16px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "16px",
-        }}
-      >
-        {/* Logo */}
-        <Link to="/" style={{ textDecoration: "none", color: "#111" }}>
-          <div style={{ fontWeight: 800, fontSize: "20px" }}>
-            block<span style={{ fontWeight: 900 }}>234</span>
-          </div>
+    <header className="nav">
+      <div className="container navInner">
+        {/* Left: Logo */}
+        <Link to="/" className="navLogo" onClick={closeMenu}>
+          block<span>234</span>
         </Link>
 
-        {/* Nav links */}
-        <nav style={{ display: "flex", gap: "18px", alignItems: "center" }}>
-          <NavLink to="/" style={navLinkStyle}>
-            Home
-          </NavLink>
-          <NavLink to="/brands" style={navLinkStyle}>
-            Brands
-          </NavLink>
-          <NavLink to="/shop" style={navLinkStyle}>
-            Shop
-          </NavLink>
-          <NavLink to="/new-arrivals" style={navLinkStyle}>
-            New Arrivals
-          </NavLink>
-          <NavLink to="/trending" style={navLinkStyle}>
-            Trending
-          </NavLink>
+        {/* Desktop links */}
+        <nav className="navLinks">
+          <NavLink to="/" className="navLink">Home</NavLink>
+          <NavLink to="/brands" className="navLink">Brands</NavLink>
+          <NavLink to="/shop" className="navLink">Shop</NavLink>
+          <NavLink to="/new-arrivals" className="navLink">New Arrivals</NavLink>
+          <NavLink to="/trending" className="navLink">Trending</NavLink>
         </nav>
 
-        {/* Right icons (simple placeholders for now) */}
-        <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
-          <button style={iconBtn}>🔍</button>
-          <button style={iconBtn}>👤</button>
-          <button style={iconBtn}>🛒</button>
+        {/* Right: Icons + Hamburger */}
+        <div className="navActions">
+          <Link to="/cart" className="navIconBtn" aria-label="Cart">
+            🛒
+          </Link>
+
+          {/* Hamburger (mobile only) */}
+          <button
+            className="navMenuBtn"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            {open ? "✕" : "☰"}
+          </button>
         </div>
+      </div>
+
+      {/* Mobile menu */}
+      <div className={`navMobile ${open ? "open" : ""}`}>
+        <NavLink to="/" className="navMobileLink" onClick={closeMenu}>Home</NavLink>
+        <NavLink to="/brands" className="navMobileLink" onClick={closeMenu}>Brands</NavLink>
+        <NavLink to="/shop" className="navMobileLink" onClick={closeMenu}>Shop</NavLink>
+        <NavLink to="/new-arrivals" className="navMobileLink" onClick={closeMenu}>New Arrivals</NavLink>
+        <NavLink to="/trending" className="navMobileLink" onClick={closeMenu}>Trending</NavLink>
       </div>
     </header>
   );
 }
-
-const iconBtn = {
-  background: "transparent",
-  border: "1px solid #eee",
-  padding: "8px 10px",
-  borderRadius: "10px",
-  cursor: "pointer",
-};
