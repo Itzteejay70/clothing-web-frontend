@@ -45,6 +45,9 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className="navActions">
+          <Link to="/profile" className="navIconBtn" aria-label="Profile">
+           👤
+          </Link>
           <Link to="/cart" className="navIconBtn" aria-label="Cart">
             🛒
             {cartCount > 0 && <span className="cartBadge">{cartCount}</span>}
