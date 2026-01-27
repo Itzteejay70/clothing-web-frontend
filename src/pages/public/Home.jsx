@@ -9,7 +9,7 @@ import WelcomeAuthModal from "../pages/../auth/WelcomeAuthModal";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
-<WelcomeAuthModal delayMs={7000} />
+<WelcomeAuthModal delayMs={3000} />
 {/* your existing home page */}
       <Hero />
       <Trending />
