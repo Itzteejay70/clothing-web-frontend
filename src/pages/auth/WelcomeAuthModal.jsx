@@ -4,6 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import "../../styles/home.css";
 
 const HAS_ACCOUNT_KEY = "cm_has_account_v1";
+const SHOWN_THIS_TAB_KEY = "cm_welcome_modal_shown_tab_v1";
 
 export default function WelcomeAuthModal({ delayMs = 2000 }) {
   const { user } = useAuth();
@@ -14,10 +15,17 @@ export default function WelcomeAuthModal({ delayMs = 2000 }) {
     // Don’t show if already logged in
     if (user) return;
 
+    // ✅ Show only once per tab load (not again when navigating back home)
+    const shownThisTab = sessionStorage.getItem(SHOWN_THIS_TAB_KEY) === "true";
+    if (shownThisTab) return;
+
     const t = setTimeout(() => {
       const hasAccount = localStorage.getItem(HAS_ACCOUNT_KEY) === "true";
       setVariant(hasAccount ? "returning" : "new");
       setOpen(true);
+
+      // mark as shown for this tab session
+      sessionStorage.setItem(SHOWN_THIS_TAB_KEY, "true");
     }, delayMs);
 
     return () => clearTimeout(t);
