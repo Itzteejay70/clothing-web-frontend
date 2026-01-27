@@ -4,6 +4,7 @@ const AuthContext = createContext();
 
 const USERS_KEY = "users_v1";
 const SESSION_KEY = "session_user_v1";
+const HAS_ACCOUNT_KEY = "cm_has_account_v1"; // ✅ add this
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -55,6 +56,9 @@ export function AuthProvider({ children }) {
 
     // Auto login after register (optional)
     setUser({ id: newUser.id, fullName: newUser.fullName, email: newUser.email });
+
+    // ✅ mark user as "has account" (for returning user popup)
+    localStorage.setItem(HAS_ACCOUNT_KEY, "true");
   }
 
   function login({ email, password }) {
@@ -67,6 +71,9 @@ export function AuthProvider({ children }) {
     if (!found) throw new Error("Invalid email or password.");
 
     setUser({ id: found.id, fullName: found.fullName, email: found.email });
+
+    // ✅ mark user as "has account"
+    localStorage.setItem(HAS_ACCOUNT_KEY, "true");
   }
 
   function logout() {

@@ -1013,3 +1013,27 @@
     padding: 14px;
   }
 }
+
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+.modalCard {
+  width: min(520px, 96vw);
+}
+
+.modalCloseBtn {
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 10px;
+  color: #444;
+}
