@@ -44,7 +44,7 @@ export default function WelcomeAuthModal({ delayMs = 2000 }) {
       <div className="authCard modalCard" onClick={(e) => e.stopPropagation()}>
         <div className="shopHeaderRow" style={{ marginBottom: 10 }}>
           <h2 className="shopTitle" style={{ margin: 0 }}>
-            {variant === "returning" ? "Welcome back 👋" : "Join us ✨"}
+            {variant === "returning" ? "Welcome back 👋" : "Join us"}
           </h2>
           <div style={{ flex: 1 }} />
           <button
