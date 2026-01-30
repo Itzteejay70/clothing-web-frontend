@@ -1,10 +1,10 @@
 const brands = [
-  { id: "nike", name: "Nike", logo: "/assets/brands/nike.jpeg" },
-  { id: "go-crazy", name: "Go-crazy", logo: "/assets/brands/gocrazy.png" },
-  { id: "zttw", name: "Zttw", logo: "/assets/brands/zttw.png" },
-  { id: "ashluxe", name: "Ashluxe", logo: "/assets/brands/ashluxe.png" },
-  { id: "dttw", name: "Dttw", logo: "/assets/brands/dttw.png" },
-  { id: "puma", name: "Puma", logo: "/assets/brands/puma.png" },
+  { id: "nike",  logo: "/assets/brands/nike.jpeg" },
+  { id: "go-crazy",  logo: "/assets/brands/gocrazy.png" },
+  { id: "zttw",  logo: "/assets/brands/zttw.png" },
+  { id: "ashluxe",  logo: "/assets/brands/ashluxe.png" },
+  { id: "dttw",  logo: "/assets/brands/dttw.png" },
+  { id: "puma",  logo: "/assets/brands/puma.png" },
 ];
 
 export async function getAllBrands() {
