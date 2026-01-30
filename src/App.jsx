@@ -6,11 +6,17 @@ import { AuthProvider } from "./context/AuthContext";
 
 function AppContent() {
   const location = useLocation();
-  const isAdminRoute = location.pathname.startsWith("/admin");
+  const path = location.pathname;
+
+  const hideNavbar =
+    path.startsWith("/admin") ||
+    path.startsWith("/login") ||
+    path.startsWith("/register") ||
+    path.startsWith("/forgot-password");
 
   return (
     <>
-      {!isAdminRoute && <Navbar />}
+      {!hideNavbar && <Navbar />}
       <AppRoutes />
     </>
   );
@@ -18,12 +24,12 @@ function AppContent() {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <CartProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
+        <CartProvider>
           <AppContent />
-        </BrowserRouter>
-      </CartProvider>
-    </AuthProvider>
+        </CartProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
