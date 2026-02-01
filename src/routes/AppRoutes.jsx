@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../pages/public/Home";
 import Brands from "../pages/public/Brands";
 import Shop from "../pages/public/Shop";
@@ -13,6 +13,9 @@ import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import ForgotPassword from "../pages/auth/ForgotPassword";
 import ProtectedRoute from "../components/common/ProtectedRoute";
+import AdminRoute from "../components/common/AdminRoute";
+
+
 
 // Admin imports
 import AdminLayout from "../components/layout/AdminLayout";
@@ -65,15 +68,26 @@ export default function AppRoutes() {
         }
       />
 
-      {/* Admin Routes - NO PROTECTION FOR TESTING */}
-      <Route path="/admin" element={<AdminLayout />}>
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="approve-products" element={<ApproveProducts />} />
-        <Route path="approve-vendors" element={<ApproveVendors />} />
-        <Route path="orders" element={<Orders />} />
-        <Route path="users" element={<Users />} />
-        <Route path="settings" element={<Settings />} />
-      </Route>
-    </Routes>
+      {/* Admin Routes - Protected */}
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminLayout />
+            </AdminRoute>
+          }
+        >
+<Route index element={<Navigate to="dashboard" replace />} />
+
+
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="approve-products" element={<ApproveProducts />} />
+      <Route path="approve-vendors" element={<ApproveVendors />} />
+      <Route path="orders" element={<Orders />} />
+      <Route path="users" element={<Users />} />
+      <Route path="settings" element={<Settings />} />
+    </Route>
+
+        </Routes>
   );
 }
