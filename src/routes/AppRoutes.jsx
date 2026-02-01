@@ -13,11 +13,9 @@ import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import ForgotPassword from "../pages/auth/ForgotPassword";
 import ProtectedRoute from "../components/common/ProtectedRoute";
-import AdminRoute from "../components/common/AdminRoute";
-
-
 
 // Admin imports
+import AdminLogin from "../pages/auth/AdminLogin";
 import AdminLayout from "../components/layout/AdminLayout";
 import Dashboard from "../pages/admin/Dashboard";
 import ApproveProducts from "../pages/admin/ApproveProducts";
@@ -68,8 +66,12 @@ export default function AppRoutes() {
         }
       />
 
-      {/* Admin Routes - NO PROTECTION FOR TESTING */}
+      {/* Admin Login Route */}
+      <Route path="/admin/login" element={<AdminLogin />} />
+
+      {/* Admin Routes */}
       <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<Navigate to="/admin/dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="approve-products" element={<ApproveProducts />} />
         <Route path="approve-vendors" element={<ApproveVendors />} />
