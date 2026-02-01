@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../pages/public/Home";
 import Brands from "../pages/public/Brands";
 import Shop from "../pages/public/Shop";
@@ -67,6 +67,7 @@ export default function AppRoutes() {
 
       {/* Admin Routes - NO PROTECTION FOR TESTING */}
       <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<Dashboard />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="approve-products" element={<ApproveProducts />} />
         <Route path="approve-vendors" element={<ApproveVendors />} />
