@@ -41,8 +41,7 @@ export default function AppRoutes() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
       {/* Protected Routes */}
-      <Route
-        path="/profile"
+      <Route path="/profile"
         element={
           <ProtectedRoute>
             <Profile />
