@@ -32,13 +32,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link
-            to="/"
-            className="text-2xl font-black tracking-tight text-gray-900 hover:text-gray-700 transition-colors duration-300"
-            aria-label="Home"
-          >
-            block<span className="text-green-700">234</span>
-          </Link>
+      <Link to="/" aria-label="Home" className="inline-flex items-center">
+  <img
+    src="/Bg.PNG"
+    className="h-40 w-auto object-contain hover:opacity-90 transition"
+  />
+</Link>
+
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
